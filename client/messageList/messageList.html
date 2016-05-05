@@ -1,0 +1,25 @@
+<template name="messagelist">
+    <div class="card-content">
+        <div class="card-header">
+            <button id="reset" class="btn right">Reset</button>
+            <h4>Log</h4>
+        </div>
+        <ul class="collection with-header" style="max-height: 300px;min-height: 300px;overflow-y: scroll">
+            {{#each messages}}
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col l3">
+                            {{topic}}
+                        </div>
+                        <div class="col l7">
+                            {{message}}
+                        </div>
+                        <div class="col l2">
+                            {{createdAt}}
+                        </div>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
