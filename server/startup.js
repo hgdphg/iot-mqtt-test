@@ -11,7 +11,8 @@
 let server = Meteor.settings.mqttHost;
 
 
-Events.mqttConnect("mqtt://jreebqah:RzEhoQNDZBiy@m21.cloudmqtt.com:10697", ['value']);
+Events.mqttConnect("mqtt://jreebqah:RzEhoQNDZBiy@m21.cloudmqtt.com:10697", ['value','light']);
+//Events.mqttConnect("mqtt://test.mosquitto.org", ['hdphuongtest']);
 
 /**
  * Timestamp the data
@@ -25,7 +26,10 @@ Events.before.upsert(function (userId, selector, modifier, options) {
  * In this database we can hold all the info/warning/error messages
  * ################################################################
  */
-Messages.mqttConnect(server, ["info","warning","error"], {insert: true}, {username: "jreebqah"}, {password: "RzEhoQNDZBiy"});
+
+Messages.mqttConnect("mqtt://test.mosquitto.org", ['hdphuongtest'], {insert: true});
+
+//Messages.mqttConnect(server, ["info","warning","error"], {insert: true}, {username: "jreebqah"}, {password: "RzEhoQNDZBiy"});
 /**
  * Timestamp the data
  */

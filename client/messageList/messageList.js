@@ -15,6 +15,7 @@ Template.messagelist.rendered = function(){
 
 Template.messagelist.helpers({
   messages: function(){
+    //return Session.get('messages');
     return Meteor.call('messages.list');
   }
 });
